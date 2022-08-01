@@ -26,34 +26,36 @@ function createGallary (galleryItems){
     )
 }
 
-// const resultOfCreateGallery = createGallary (galleryItems)
-galleryEl.insertAdjacentHTML("beforeend", createGallary (galleryItems))
+const resultOfCreateGallery = createGallary (galleryItems)
+galleryEl.insertAdjacentHTML("beforeend", resultOfCreateGallery)
 
-galleryEl.addEventListener("click", galleryHandler)
+// galleryEl.addEventListener("click", galleryHandler)
 
-function galleryHandler (event){
-    event.preventDefault()
-    const eventItem = event.target.dataset.source
-    const modalEl = simplelightbox.create(`
-        <img src="${eventItem}" width="800" height="600">`,
+// function galleryHandler (event){
+//     event.preventDefault()
+//     const eventItem = event.target.dataset.source
+//     const modalEl = simplelightbox.create(
+//         `<img src="${eventItem}" width="800" height="600">`,
     
-        {
-    onShow: () => window.addEventListener("keydown", escape ),
-    onClose: () => window.removeEventListener("keydown", escape)
-    }
-    )
+//         {
+//     onShow: () => window.addEventListener("keydown", escape ),
+//     onClose: () => window.removeEventListener("keydown", escape)
+//     }
+//     )
+//     modalEl.show()
 
-    modalEl.show()
-
-    function escape (event){
-    if (event.code === "Escape"){
-    modalEl.close()   
-}
-}    
-}
+//     function escape (event){
+//     if (event.code === "Escape"){
+//     modalEl.close()   
+// }
+// }    
+// }
 
 const lightbox = new SimpleLightbox('.gallery a', {
     captionsData: 'alt',
     captionDelay: 250,
     captionPosition: 'bottom',
 })
+
+
+
