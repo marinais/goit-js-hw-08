@@ -37,6 +37,4 @@ function updateData () {
         formEl.elements.message.value = savedData.message || "";
         console.log(savedData)
     }
-
 }
-

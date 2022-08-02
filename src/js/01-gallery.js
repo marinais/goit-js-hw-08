@@ -1,4 +1,3 @@
-
 import "simplelightbox/dist/simple-lightbox.min.css"
 import SimpleLightbox from "simplelightbox"
 // Add imports above this line
@@ -56,6 +55,3 @@ const lightbox = new SimpleLightbox('.gallery a', {
     captionDelay: 250,
     captionPosition: 'bottom',
 })
-
-
-
