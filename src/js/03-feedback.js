@@ -9,12 +9,14 @@ formEl.addEventListener("submit", submitInfo)
 
 updateData ()
 
-const formData = {}
+// const formData = {}
 
 function saveData (e) {
-    // const formData = localStorage.getItem(STORAGE_KEY)
+   
+    const formData = localStorage.getItem(STORAGE_KEY) ? JSON.parse(localStorage.getItem(STORAGE_KEY)) : {}
+    formData[e.target.name] = e.target.value || ""
+    
 
-    formData[e.target.name] = e.target.value
     localStorage.setItem(STORAGE_KEY, JSON.stringify(formData))
     console.log(JSON.stringify(formData))
 }
@@ -37,4 +39,6 @@ function updateData () {
         formEl.elements.message.value = savedData.message || "";
         console.log(savedData)
     }
+
+
 }
